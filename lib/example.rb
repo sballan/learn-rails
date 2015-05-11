@@ -18,14 +18,18 @@ class Example < Object
 	end
 
 	def titled_name
+		# ||= means assign to this variable if it is currently unassigned
 		@honorific ||= 'Esteemed'
 		titled_name = "#{@honorific} #{@name}"
 	end
 
 	def december_birthdays
 		born_in_december = [ ]
+		# .each iterates over a Hash map, using the | __, __| variables
+		# key-value pairs.
 		famous_birthdays.each do |name,date|
 			if date.month == 12
+				# << adds the following item to an array
 				born_in_december << name
 			end
 		end
